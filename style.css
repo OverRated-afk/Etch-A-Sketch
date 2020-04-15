@@ -1,0 +1,29 @@
+html{
+    background-color: black;
+}
+
+h1{
+    color: white;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    border: solid;
+    border-color:white;
+    min-height: 250px;
+    height: auto;
+    min-width: 500px;
+    width: auto;
+}
+#children, #parent{
+    flex: 1 1 0;
+    justify-content: center;
+    min-width: 25px;
+    min-height: 25px;
+    width: auto;
+    height: auto;
+}
+

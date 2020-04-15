@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel ="stylesheet" type="text/css" href = "style.css"> 
+</head>
+<main>
+    <body onload="createDivs(16)">
+        <h1>Welcome to my Etch-a-Sketch!</h1>
+        <div><button id = "clear" onclick="getSize()">Press to clear the board.</button></div>
+        <br>
+        <div id = "container"></div>
+</body>
+</main>
+
+
+
+<script>
+function getSize() {
+    let size = prompt("How large would you like your grid?", "Enter the length of one side here.")
+    if (size != null) {
+        sizeOfBox = size;
+        console.log(sizeOfBox);
+    }
+    return size;
+}
+
+clear.onclick = () => {
+    const myNode =  document.getElementById("container");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+    createDivs(getSize());
+
+}
+
+function createDivs(newSize){
+    let size = newSize;
+    for(width = 0; width < size; width++){ //create columns
+        const parent = document.createElement("div");
+        container.appendChild(parent);
+        parent.setAttribute("id", "parent");
+        for (i = 0; i < size; ++i) { //create rows
+            const div = document.createElement('div');
+            div.setAttribute("id", "children");
+            div.addEventListener("mouseenter", (e) => {
+                div.setAttribute("style", `background-color: ${randomColor()}`);
+            })
+            parent.appendChild(div);
+        };
+    }
+}
+
+function randomColor() {
+    let r = ((Math.random()*256));
+    let g = ((Math.random()*256));
+    let b = ((Math.random()*256));
+    return "rgb("+r+","+g+","+b+")";
+}
+</script>
+</html>
