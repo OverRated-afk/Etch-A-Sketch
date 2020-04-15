@@ -4,18 +4,25 @@ html{
 
 h1{
     color: white;
-    justify-content: center;
+    justify-self: center;
+}
+
+body {
+    display:flex;
+    justify-items: center;
+    align-items: center;
 }
 
 #container {
     display: flex;
-    align-items: center;
     justify-self: center;
     border: solid;
     border-color:white;
     min-height: 250px;
+    max-height: 750px;
     height: auto;
-    min-width: 500px;
+    min-width: 250px;
+    max-width: 1500px;
     width: auto;
 }
 #children, #parent{

@@ -18,12 +18,12 @@
 <script>
 function getSize() {
     let size = prompt("How large would you like your grid?", "Enter the length of one side here.")
-    if (size != null) {
-        sizeOfBox = size;
-        console.log(sizeOfBox);
+    if (size <= 50) {
+        return size;
+    } else {
+        alert("Try again. Please use a reasonable size.")
     }
-    return size;
-}
+};
 
 clear.onclick = () => {
     const myNode =  document.getElementById("container");
